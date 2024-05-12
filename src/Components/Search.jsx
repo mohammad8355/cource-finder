@@ -1,10 +1,14 @@
 import { useState } from "react";
 import "../assets/search-svgrepo-com.svg";
-function Search() {
+function Search({ setQuery }) {
   const [openFilter, setOpenFilter] = useState(false);
   return (
     <div className="searchbox searchbox-left">
-      <input type="text" placeholder="enter any technologies..." />
+      <input
+        type="text"
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="enter any technologies..."
+      />
       <svg
         fill="#ffffff"
         height="800px"
