@@ -3,12 +3,12 @@ import Search from "./Components/Search.jsx";
 import "./App.css";
 import "./index.css";
 import "./bootstrap-grid.min.css";
-import CourceList from "./Components/CourceList.jsx";
+import CourseList from "./Components/CourseList.jsx";
 import { urlmaker } from "./youtubeApi.js";
 import {aparaturlmaker} from "./aparatapi.js";
 
 function App() {
-  const [cources, setCources] = useState([]);
+  const [courses, setCourses] = useState([]);
   const [query, setQuery] = useState("");
   useEffect(() => {
     const controller = new AbortController();
@@ -18,7 +18,7 @@ function App() {
         let result = await fetch(url,{signal: controller.signal});
         if (result.ok) {
           const data = await result.json();
-          setCources(data.items);
+          setCourses(data.items);
         } else {
           throw new Error("fail to request to youtube api");
         }
@@ -62,9 +62,9 @@ function App() {
         <Search setQuery={setQuery} />
       </div>
       <div>
-        <CourceList cources={cources} />
+        <CourseList courses={courses} />
       </div>
-      {/* <CourceDetail /> */}
+      {/* <CourseDetail /> */}
     </>
   );
 }
@@ -72,9 +72,9 @@ function Welcome() {
   return (
     <div className="welcome">
       <h1>
-        Welcome to <span className="name">Cource Finder</span>
+        Welcome to <span className="name">Course Finder</span>
       </h1>
-      <p>here you can find any cource to learn</p>
+      <p>here you can find any course to learn</p>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-export default function CourceItem({ item }) {
+export default function CourseItem({ item }) {
   return (
     <li className="item col-lg-3 col-md-4 col-6 col-12">
       <img src={item.snippet.thumbnails.default.url} alt={item.snippet.title} />

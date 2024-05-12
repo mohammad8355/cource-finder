@@ -1,4 +1,4 @@
-export default function CourceDetail() {
+export default function CourseDetail() {
   return (
     <div className="details">
       <div className="details-overview">
@@ -15,7 +15,7 @@ export default function CourceDetail() {
         </header>
       </div>
       <section>
-        <p>description about cource .....</p>
+        <p>description about course .....</p>
         <a href="#">link</a>
       </section>
     </div>
